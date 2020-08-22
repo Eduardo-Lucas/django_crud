@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h5 class="text-info">Lista de Contatos</h5>
+    <a href="{% url 'contato_create' %}" class="btn btn-outline-success btn-sm">Novo Contato</a>
+
+    <table class="table-striped table-bordered table-hover table-sm">
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Endereço</td>
+                <td>Telefone</td>
+                <td>Idade</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contato in object_list %}
+                <tr>
+                    <td>{{contato.nome}}</td>
+                    <td>{{contato.endereco}}</td>
+                    <td>{{contato.telefone}}</td>
+                    <td>{{contato.idade}}</td>
+                </tr>
+            {% empty %}
+            <tr>
+                <td colspan="9" class="text-center bg-warning">Sem Contatos no momento</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
