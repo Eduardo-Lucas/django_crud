@@ -2,15 +2,15 @@
 
 
 {% block content %}
-    <h5 class="text-info text-center">Confirmação para apagar registro</h5>
+    <h5 class="text-info text-center mt-3">Confirmação para apagar registro</h5>
     <div class="container text-right">
-        <a href="{% url 'lista_contatos' %}" class="btn bn-sm btn-outline-primary"> Voltar </a>
+        <a href="{% url 'lista_contatos_generica' %}" class="btn bn-sm btn-outline-primary mt-3"> Voltar </a>
     </div>
     <div class="container text-center text-warning">
         <form method="post">{% csrf_token %}
             <h5>Tem certeza que quer apagar o registro de "{{ object }}"?</h5>
             <div class="text-right">
-                <input class="btn btn-outline-danger" type="submit" value="Confirma">
+                <input class="btn btn-outline-danger mb-3" type="submit" value="Confirma">
             </div>
         </form>
     </div>

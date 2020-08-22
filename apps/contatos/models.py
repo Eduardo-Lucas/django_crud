@@ -7,5 +7,8 @@ class Contato(models.Model):
     telefone = models.CharField(max_length=20, blank=True, null=True, default='(99) 9 9999-9999')
     idade = models.PositiveIntegerField(default=20)
 
+    class Meta:
+        ordering = ['nome']
+
     def __str__(self):
         return '%s' % self.nome
