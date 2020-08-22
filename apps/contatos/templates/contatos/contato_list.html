@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block title %} | Lista de Contatos {% endblock %}
 {% block content %}
-    <h5 class="text-info">Lista de Contatos</h5>
-    <a href="{% url 'contato_create' %}" class="btn btn-outline-success btn-sm">
+    <h5 class="text-info mt-3">Lista de Contatos</h5>
+    <a href="{% url 'contato_create' %}" class="btn btn-outline-success btn-sm mb-3">
         <i class="fas fa-user-plus"></i>
         Novo Contato</a>
-    <a href="{% url 'index' %}" class="btn btn-outline-info btn-sm"><i class="fas fa-home"></i> Início</a>
+    <a href="{% url 'index' %}" class="btn btn-outline-info btn-sm mb-3"><i class="fas fa-home"></i> Início</a>
 
-    <table class="table-striped table-bordered table-hover table-sm">
+    <table class="table-striped table-bordered table-hover table-sm mb-3">
         <thead class="thead-dark">
             <tr>
                 <th>Nome</th>
