@@ -25,7 +25,7 @@ SECRET_KEY = 'hlsxgc5!x=4t1**mhy47e1w-km5wv@3hdjy71g^cyw6mc@-h7&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-geekhunter-crud.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
