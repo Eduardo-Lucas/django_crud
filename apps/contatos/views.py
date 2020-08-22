@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from django.urls import reverse, reverse_lazy
-from django.views.generic import ListView, CreateView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, CreateView, UpdateView
 
 from apps.contatos.models import Contato
 
 
 def lista_contatos(request):
-    contatos = Contato.objects.all()
+    contatos = Contato.objects.all().order_by('nome')
     context = {
         'contatos': contatos
     }
@@ -18,6 +18,12 @@ class ContatoListView(ListView):
 
 
 class ContatoCreateView(CreateView):
+    model = Contato
+    fields = '__all__'
+    success_url = reverse_lazy('lista_contatos')
+
+
+class ContatoUpdateView(UpdateView):
     model = Contato
     fields = '__all__'
     success_url = reverse_lazy('lista_contatos')

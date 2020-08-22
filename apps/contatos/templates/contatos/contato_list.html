@@ -5,12 +5,14 @@
     <a href="{% url 'contato_create' %}" class="btn btn-outline-success btn-sm">Novo Contato</a>
 
     <table class="table-striped table-bordered table-hover table-sm">
-        <thead>
+        <thead class="thead-dark">
             <tr>
-                <td>Nome</td>
-                <td>Endereço</td>
-                <td>Telefone</td>
-                <td>Idade</td>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
+                <th>Idade</th>
+                <th></th>
+
             </tr>
         </thead>
         <tbody>
@@ -20,6 +22,9 @@
                     <td>{{contato.endereco}}</td>
                     <td>{{contato.telefone}}</td>
                     <td>{{contato.idade}}</td>
+                    <td>
+                        <a href="{% url 'contato_update' contato.id %}">Editar</a>
+                    </td>
                 </tr>
             {% empty %}
             <tr>
