@@ -1,7 +1,49 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-    <form action=""> {% csrf_token %}
-        {{ form }}
+
+    {% if self.object == None %}
+        <h5 class="text-info">Cria novo Contato</h5>
+    {% else %}
+        <h5 class="text-info">Atualiza Contato existente</h5>
+    {% endif %}
+
+    <form method="POST"> {% csrf_token %}
+         <div class="row ">
+            <div class="col-md-3">
+                {{form.nome|as_crispy_field}}
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-3">
+                {{form.endereco|as_crispy_field}}
+            </div>
+         </div>
+        <div class="row">
+            <div class="col-md-3">
+                {{form.telefone|as_crispy_field}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                {{form.idade|as_crispy_field}}
+            </div>
+        </div>
+
+        <div class="row border border-dark">
+
+            <div class="col-md-8 mt-1 mb-1">
+                <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                    Gravar
+                </button>
+            </div>
+
+            <div class="col-md-4 mt-1 mb-1">
+                <a href="{% url 'lista_contatos' %}" class="btn btn-secondary btn-block btn-lg">
+                    <i class="fas fa-stream"></i> Volta para a Lista
+                </a>
+            </div>
+        </div>
     </form>
 {% endblock %}
