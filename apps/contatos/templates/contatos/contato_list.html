@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% block title %} | Lista de Contatos {% endblock %}
 {% block content %}
     <h5 class="text-info">Lista de Contatos</h5>
     <a href="{% url 'contato_create' %}" class="btn btn-outline-success btn-sm">Novo Contato</a>
@@ -11,6 +11,7 @@
                 <th>Endereço</th>
                 <th>Telefone</th>
                 <th>Idade</th>
+                <th></th>
                 <th></th>
 
             </tr>
@@ -24,6 +25,9 @@
                     <td>{{contato.idade}}</td>
                     <td>
                         <a href="{% url 'contato_update' contato.id %}">Editar</a>
+                    </td>
+                    <td>
+                        <a href="{% url 'contato_delete' contato.id %}">Apagar</a>
                     </td>
                 </tr>
             {% empty %}

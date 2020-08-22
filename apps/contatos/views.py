@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from apps.contatos.models import Contato
 
@@ -26,4 +26,9 @@ class ContatoCreateView(CreateView):
 class ContatoUpdateView(UpdateView):
     model = Contato
     fields = '__all__'
+    success_url = reverse_lazy('lista_contatos')
+
+
+class ContatoDeleteView(DeleteView):
+    model = Contato
     success_url = reverse_lazy('lista_contatos')
