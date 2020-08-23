@@ -5,14 +5,6 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from apps.contatos.models import Contato
 
 
-def lista_contatos(request):
-    contatos = Contato.objects.all().order_by('nome')
-    context = {
-        'contatos': contatos
-    }
-    return render(request, 'contatos/contato_list.html', context)
-
-
 class ContatoListView(ListView):
     model = Contato
     context_object_name = 'contatos'
@@ -32,4 +24,4 @@ class ContatoUpdateView(UpdateView):
 
 class ContatoDeleteView(DeleteView):
     model = Contato
-    success_url = reverse_lazy('lista_contatos')
+    success_url = reverse_lazy('lista_contatos_generica')

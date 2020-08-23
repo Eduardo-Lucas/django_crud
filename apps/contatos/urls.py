@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.contatos.views import lista_contatos, ContatoListView, ContatoCreateView, ContatoUpdateView, ContatoDeleteView
+from apps.contatos.views import ContatoListView, ContatoCreateView, ContatoUpdateView, ContatoDeleteView
 
 urlpatterns = [
     # CRUD da class Contato
